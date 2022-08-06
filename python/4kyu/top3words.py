@@ -27,5 +27,4 @@ def top_3_words(text):
 
     return top3
 
-
 print(top_3_words(" qw ''  "))
