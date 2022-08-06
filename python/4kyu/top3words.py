@@ -26,5 +26,3 @@ def top_3_words(text):
             break
 
     return top3
-
-print(top_3_words(" qw ''  "))
