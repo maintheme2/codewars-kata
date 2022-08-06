@@ -15,7 +15,7 @@ def top_3_words(text):
         if word in words_freq: words_freq[word] += 1
         else: words_freq[word] = 1
 
-    del words_freq['']
+    if '' in words_freq: del words_freq['']
   
     words_freq = dict(sorted(words_freq.items(), key=lambda item: item[1], reverse=True))
     
