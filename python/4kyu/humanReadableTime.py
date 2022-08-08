@@ -1,5 +1,10 @@
 # y, d, h, m and s
-def format_duration(seconds):
-    
+import humanize
+import datetime as dt
 
-print(format_duration(3600))
+def format_duration(seconds):
+    delta = dt.timedelta(seconds=seconds)  
+  
+    return humanize.time.precisedelta(delta)
+    
+print(format_duration(123456789))
