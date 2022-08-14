@@ -13,9 +13,8 @@ def format_duration(seconds):
                 result += item + ', '
             else: result += str(delta[item]) + ' ' + item + ', '
 
-
     result = list(result)
-    
+
     if len(result) > 0: result[-1] = ''
     elif len(result) == 0: return "now"
 
