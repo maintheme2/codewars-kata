@@ -3,13 +3,25 @@ class Node:
         self.left = L
         self.right = R
         self.value = n
-
+            
 def tree_by_levels(node):
-    values = []
-    print(node.left)
-    for value in vars(node).values():
-        values.append(value)
+    if node == None:
+        return []
 
-    return values
+    result, q = [], [node]
 
-print(tree_by_levels(Node(12,13,Node(14,15,None))))
+    while q:
+        n = q.pop(0)
+
+        if isinstance(n, Node):
+            result.append(n.value)
+            
+            if n.left != None:
+                q.append(n.left)
+
+            if n.right != None:
+                q.append(n.right)
+
+    return result
+
+print(tree_by_levels(Node(Node(None, Node(None, None, 4), 2), Node(Node(None, None, 5), Node(None, None, 6), 3), 1)))
